@@ -1,0 +1,393 @@
+{
+  "profile": {
+    "name": "Salvado",
+    "role": "Cyber Security Enthusiast",
+    "email": "aryabutur94@gmail.com",
+    "github": "https://github.com/LaOdhe16",
+    "linkedin": "https://www.linkedin.com/in/salvado-agus-firmansyah-ode-306369356/",
+    "instagram": "https://www.instagram.com/elsalvtoreee/",
+    "resume_link": "https://drive.google.com/file/d/1pS-ZCwDEcB-UdopzLJE7PD2yyz0n7oKN/view?usp=drive_link",
+    "about": "Cybersecurity student & Python developer with a passion for penetration testing, threat detection, and building secure web applications. Currently honing red-team skills at University Amikom Yogyakarta.",
+    "medium": "https://medium.com/@aryabutur94",
+    "certificates_link": "https://drive.google.com/drive/folders/1H5yJzpRu48qPjX77_IXobq2Fly2sVYsD?usp=sharing"
+  },
+  "skills": [
+    "Python",
+    "Flask",
+    "Linux",
+    "Microsoft Azure",
+    "MySQL",
+    "Docker",
+    "Git",
+    "Bash Scripting",
+    "JavaScript",
+    "Tailwind CSS",
+    "Pygame",
+    "Burp Suite",
+    "Nmap",
+    "Wireshark",
+    "YARA Rules",
+    "JADX",
+    "ADB",
+    "Genymotion",
+    "VirusTotal API"
+  ],
+  "education": [
+    {
+      "year": "2023 - Present",
+      "degree": "Cybersecurity Student",
+      "school": "University Amikom Yogyakarta"
+    },
+    {
+      "year": "2020 - 2023",
+      "degree": "IPA",
+      "school": "SMAN 1 Kulisusu"
+    },
+    {
+      "year": "2017 - 2020",
+      "school": "SMPN 1 Kulisusu"
+    },
+    {
+      "year": "2011 - 2017",
+      "school": "SDN 2 Kulisusu"
+    }
+  ],
+  "experience": [
+    {
+      "year": "",
+      "role": "Junior Cyber Security Engineer",
+      "company": "PT Seven Vinix Aurum",
+      "link": ""
+    },
+    {
+      "year": "2026",
+      "role": "Bootcamp Cyber Security (Penetration Testing)",
+      "company": "IDNetworkers",
+      "link": "https://drive.google.com/file/d/1h_azqqkSjI4F9WIJuJB8w8a_8A_24HyH/view?usp=drive_link"
+    },
+    {
+      "year": "2026",
+      "role": "Bootcamp Cyber Sentinel Secure",
+      "company": "XCode",
+      "link": "https://drive.google.com/file/d/1dNIkC-LUfmS4BN0jMXJgAYmYyqGUzp90/view?usp=sharing"
+    },
+    {
+      "year": "2026",
+      "role": "Asistem Praktikum Pemrograman Web",
+      "company": "Universitas Amikom Yogyakarta",
+      "link": "https://drive.google.com/file/d/1Sku8aMc84VbJ8oHDHj6_8ezqFZFvg5m7/view?usp=drive_link"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "YARA Malware Detection Rules",
+      "category": "Cybersecurity",
+      "year": "2025",
+      "description": "A collection of YARA rules for identifying and detecting malware patterns using YARA’s rule-based scanning syntax. The repository contains custom `.yar` signatures aimed at improving threat detection and malware analysis workflows.",
+      "stack": [
+        "YARA",
+        "Malware Analysis",
+        "Threat Detection"
+      ],
+      "features": [
+        "Custom .yar signatures for known malware families",
+        "Pattern-based string and byte-sequence matching rules",
+        "Structured for use in SOC / EDR detection workflows"
+      ],
+      "link": "https://github.com/LaOdhe16/Yara-Rule",
+      "impactful": false
+    },
+    {
+      "id": 2,
+      "title": "HomeService",
+      "category": "Web",
+      "year": "2025",
+      "description": "HomeService is a web-based platform built with Python and Flask to manage household service bookings, hosted on Microsoft Azure with a MySQL database.",
+      "stack": [
+        "Python",
+        "Flask",
+        "MySQL",
+        "Microsoft Azure"
+      ],
+      "features": [
+        "End-to-end household service booking workflow",
+        "MySQL-backed data layer for bookings and users",
+        "Deployed and hosted on Microsoft Azure"
+      ],
+      "link": "https://github.com/LaOdhe16/HomeService",
+      "impactful": false
+    },
+    {
+      "id": 3,
+      "title": "Library Book Borrowing System",
+      "category": "Web",
+      "year": "2024",
+      "description": "A web-based library management and book borrowing application built with Flask and MySQL, featuring user authentication, book search, borrowing/returning functions, and admin book management.",
+      "stack": [
+        "Python",
+        "Flask",
+        "MySQL"
+      ],
+      "features": [
+        "User authentication and role-based access",
+        "Book catalog search and browsing",
+        "Borrow / return workflow with admin inventory tools"
+      ],
+      "link": "https://github.com/LaOdhe16/Library_Management",
+      "impactful": false
+    },
+    {
+      "id": 4,
+      "title": "Vehicle Rental System",
+      "category": "Web",
+      "year": "2024",
+      "description": "Building a vehicle reservation platform that allows users to view unit availability and conduct rental transactions systematically.",
+      "stack": [
+        "Python",
+        "Flask",
+        "MySQL"
+      ],
+      "features": [
+        "Real-time vehicle unit availability tracking",
+        "Structured rental transaction workflow",
+        "Centralized record-keeping for reservations"
+      ],
+      "link": "https://github.com/LaOdhe16/Sistem_Penyewaan_Kendaraan",
+      "impactful": false
+    },
+    {
+      "id": 5,
+      "title": "Ticket Booking System",
+      "category": "Web",
+      "year": "2024",
+      "description": "Design a web-based ticket booking system with schedule management features and a structured checkout process.",
+      "stack": [
+        "Python",
+        "Flask",
+        "MySQL"
+      ],
+      "features": [
+        "Schedule and availability management",
+        "Guided seat / ticket selection flow",
+        "Structured, multi-step checkout process"
+      ],
+      "link": "https://github.com/LaOdhe16/Sistem_Pemesanan_Tiket",
+      "impactful": false
+    },
+    {
+      "id": 6,
+      "title": "Flappy Bird Game (Python)",
+      "category": "Game",
+      "year": "2024",
+      "description": "A Python-based implementation of the classic Flappy Bird game, featuring game logic and assets to recreate the addictive side-scrolling bird gameplay in a desktop environment.",
+      "stack": [
+        "Python",
+        "Pygame"
+      ],
+      "features": [
+        "Classic side-scrolling obstacle gameplay loop",
+        "Collision detection and live scoring system",
+        "Custom sprite assets and game-over states"
+      ],
+      "link": "https://github.com/LaOdhe16/Projek-Game-Flappy-Bird",
+      "impactful": false
+    },
+    {
+      "id": 7,
+      "title": "AndroGoat Security Exploitation and Analysis",
+      "subtitle": "An Investigation into 5 Critical Vulnerabilities in an Android Application",
+      "category": "Cybersecurity",
+      "year": "2026",
+      "icon": "fa-mobile-screen-button",
+      "link": "https://medium.com/@aryabutur94/eksploitasi-dan-analisis-keamanan-androgoat-investigasi-5-celah-kritis-pada-aplikasi-android-d6eddf621c9f",
+      "description": "A security audit of AndroGoat, an intentionally vulnerable Android app built for practising mobile penetration testing. Using dynamic analysis on a Genymotion emulator with ADB, plus static analysis with JADX, five critical weaknesses were identified, exploited and documented in a Medium write-up.",
+      "stack": [
+        "Android",
+        "ADB",
+        "JADX",
+        "Genymotion"
+      ],
+      "features": [
+        "Insecure data storage: plaintext credentials recovered from SharedPreferences over ADB",
+        "Hardcoded secrets: a promo code and a leaked OpenAI API key found by decompiling the APK",
+        "Insecure clipboard usage exposing OTPs and card numbers to other apps",
+        "Weak root detection that relies on a single, easily bypassed function"
+      ],
+      "impactful": false
+    },
+    {
+      "id": 8,
+      "title": "Android APK Malware Analysis & Reverse Engineering",
+      "subtitle": "",
+      "category": "Cybersecurity",
+      "year": "2026",
+      "icon": "fa-bug",
+      "link": "https://www.linkedin.com/posts/salvado-agus-firmansyah-ode-306369356_analisis-terhadap-malware-berbasis-apk-ugcPost-7434533949734821888-hyHV/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFivqHYBLPmb-J0FVkI4rWn96CgDNZnFORk",
+      "description": "An analysis of Android APK-based malware, using reverse engineering to understand how the sample behaves. The findings are published as a write-up on LinkedIn.",
+      "stack": [
+        "Malware Analysis",
+        "Reverse Engineering",
+        "Android"
+      ],
+      "features": [
+        "Analysis of APK-based malware behaviour",
+        "Reverse engineering of the application package",
+        "Findings documented in a public write-up"
+      ],
+      "impactful": false
+    },
+    {
+      "id": 9,
+      "title": "Web Application Penetration Testing",
+      "subtitle": "Vulnerable Lab Assessment",
+      "category": "Cybersecurity",
+      "year": "2026",
+      "icon": "fa-user-secret",
+      "link": "https://www.linkedin.com/posts/salvado-agus-firmansyah-ode-306369356_laporan-uji-penetrasi-lab-vulnerable-web-ugcPost-7432529044329517056-DURc/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFivqHYBLPmb-J0FVkI4rWn96CgDNZnFORk",
+      "description": "A penetration test of an intentionally vulnerable web application lab. Weaknesses were located and compiled into a penetration testing report, shared as a write-up on LinkedIn.",
+      "stack": [
+        "Penetration Testing",
+        "Web Security",
+        "Vulnerability Assessment"
+      ],
+      "features": [
+        "Hands-on assessment of a deliberately vulnerable web lab",
+        "Findings compiled into a structured penetration testing report",
+        "Published as a write-up on LinkedIn"
+      ],
+      "impactful": false
+    },
+    {
+      "id": 10,
+      "title": "Python-Automated Honeypot & Intrusion Detection System (IDS)",
+      "subtitle": "",
+      "category": "Cybersecurity",
+      "year": "2026",
+      "icon": "fa-spider",
+      "link": "https://github.com/LaOdhe16/Python-Automated-Honeypot-Intrusion-Detection-System-IDS-",
+      "description": "A Python honeypot that imitates a restricted government login gateway over a raw TCP socket. Each connection is served in its own thread, and every intruder's IP address and submitted credentials are written to a log file.",
+      "stack": [
+        "Python",
+        "Socket",
+        "Threading",
+        "Logging"
+      ],
+      "features": [
+        "Convincing fake \"secure gateway\" terminal with boot animation and coloured ANSI boxes",
+        "Multi-threaded server that handles several intruders at once",
+        "Logs IP, username and password of every attempt with timestamps",
+        "Finishes each session with an \"ACCESS DENIED\" alert screen"
+      ],
+      "impactful": false
+    },
+    {
+      "id": 11,
+      "title": "WebShield-Analyzer",
+      "subtitle": "Web Traffic & Security Log Parser",
+      "category": "Cybersecurity",
+      "year": "2026",
+      "icon": "fa-file-shield",
+      "link": "https://github.com/LaOdhe16/WebShield-Analyzer",
+      "description": "A lightweight OSINT and web security scanner built with Python and Flask, styled with Tailwind CSS and fully dockerized. Enter a URL and it inspects security headers, reputation, exposed files and network details in one click.",
+      "stack": [
+        "Python",
+        "Flask",
+        "Tailwind CSS",
+        "Docker",
+        "VirusTotal API"
+      ],
+      "features": [
+        "HTTP security header checks (HSTS, CSP, X-Frame-Options) with mitigation guidance",
+        "VirusTotal lookup for malware and phishing reputation",
+        "OSINT discovery: subdomains via crt.sh, WHOIS data and Wayback Machine history",
+        "Async port scanner, IP geolocation and CMS / tech-stack detection",
+        "SPF and DMARC checks plus hunting for exposed files such as /.env and /.git/config"
+      ],
+      "impactful": false
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "title": "Cybersecurity Educator",
+      "issuer": "RED TEAM LEADERS",
+      "year": "2025",
+      "image": "/static/img/ccep.png",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Network Security",
+      "issuer": "CISCO Networking Academy",
+      "year": "2026",
+      "image": "/static/img/network-security.png",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Junior Ethical Hacker",
+      "issuer": "X-CODE",
+      "year": "2026",
+      "image": "/static/img/junior-ethical-hacker.png",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Ethical Hacker",
+      "issuer": "CISCO Networking Academy",
+      "year": "2026",
+      "image": "/static/img/EticalHacker.png",
+      "featured": true
+    },
+    {
+      "id": 5,
+      "title": "CCNA Introduction to Networks",
+      "issuer": "CISCO Networking Academy",
+      "year": "2025",
+      "image": "/static/img/ccna-intro.png",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "CCNA: Enterprise Networking",
+      "issuer": "CISCO Networking Academy",
+      "year": "2025",
+      "image": "/static/img/ccna-enterprise.png",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "CCNA: Switching, Routing",
+      "issuer": "CISCO Networking Academy",
+      "year": "2025",
+      "image": "/static/img/ccna-switching.png",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "title": "Phishing Prevention (CPPS)",
+      "issuer": "Hack & Fix",
+      "year": "2025",
+      "image": "/static/img/cpps.png",
+      "featured": false
+    }
+  ],
+  "services": [
+    {
+      "icon": "fa-layer-group",
+      "title": "Web Development",
+      "desc": "Full-stack web apps with Python & Flask, from database design to deployment on Azure."
+    },
+    {
+      "icon": "fa-shield-halved",
+      "title": "Penetration Testing",
+      "desc": "Network & web app security assessments using industry tools like Burp Suite and Nmap."
+    },
+    {
+      "icon": "fa-fingerprint",
+      "title": "Digital Forensics",
+      "desc": "Examining digital evidence and suspicious files, including Android APK malware, to trace what happened and how."
+    }
+  ]
+}

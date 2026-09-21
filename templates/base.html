@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ profile.name }} | Portfolio{% endblock %}</title>
+  <meta name="description" content="{{ profile.name }}, {{ profile.role }}. Cybersecurity & Python Developer.">
+  <meta name="theme-color" content="#1e1e20">
+  <link rel="icon" href="{{ url_for('static', filename='img/Sc.ico') }}" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=110">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+  <div id="scrollBar" class="scroll-bar"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap">
+      <a href="/" class="logo">{{ profile.name.split()[0] }}<span class="logo-dot">.</span></a>
+
+      <nav class="nav-center" id="navLinks">
+        <a href="/#about"        data-sec="about">About</a>
+        <a href="/#expertise"    data-sec="expertise">Skills</a>
+        <a href="/#background"   data-sec="background">Journey</a>
+        <a href="/#work"         data-sec="work">Portfolio</a>
+        <a href="/#certificates" data-sec="certificates">Certificates</a>
+        <a href="/#contact"      data-sec="contact">Contact me</a>
+      </nav>
+
+      <div class="nav-end">
+        <a href="mailto:{{ profile.email }}" class="nav-cta">Hire me</a>
+        <button class="ham" id="ham" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="drawer" id="drawer">
+    <button class="drawer-x" id="drawerX" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <div class="drawer-inner">
+      <nav class="drawer-links">
+        <a href="/#about">About</a>
+        <a href="/#expertise">Skills</a>
+        <a href="/#background">Journey</a>
+        <a href="/#work">Portfolio</a>
+        <a href="/#certificates">Certificates</a>
+        <a href="/#contact">Contact me</a>
+      </nav>
+      <div class="drawer-bottom">
+        <div class="drawer-foot">
+          <a href="{{ profile.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="{{ profile.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          {% if profile.medium %}<a href="{{ profile.medium }}" target="_blank" rel="noopener" aria-label="Medium"><i class="fa-brands fa-medium"></i></a>{% endif %}
+          {% if profile.instagram %}<a href="{{ profile.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{% endif %}
+        </div>
+        <a href="mailto:{{ profile.email }}" class="btn btn-light">Hire me</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-bg" id="drawerBg"></div>
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-top">
+        <a href="/" class="logo">{{ profile.name.split()[0] }}<span class="logo-dot">.</span></a>
+        <div class="foot-links">
+          <a href="{{ profile.github }}" target="_blank" rel="noopener">GitHub</a>
+          <a href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+          {% if profile.medium %}<a href="{{ profile.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
+          {% if profile.instagram %}<a href="{{ profile.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+        </div>
+      </div>
+      <p class="foot-copy">&copy; {{ current_year }} {{ profile.name }}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="topBtn" class="top-btn" title="Back to top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-x" id="lbX" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lb-wrap">
+      <img id="lbImg" src="" alt="">
+      <p class="lb-cap" id="lbCap"></p>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="globalToast"></div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}?v=110"></script>
+</body>
+</html>

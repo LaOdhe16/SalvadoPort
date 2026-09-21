@@ -1,0 +1,1 @@
+> 💡 **Development Status:** This project is currently in the development phase and has not yet reached its final release. Certain features, animations, and contents are subject to change as I continue to optimize the website.

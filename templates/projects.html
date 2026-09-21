@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+{# Legacy template (no route uses it). Restyled to match the new design. #}
+<section class="pd-hero">
+  <div class="container">
+    <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left-long"></i> Back to home</a>
+    <div class="pd-meta"><span class="pd-cat">{{ project.category }}</span></div>
+    <h1 class="pd-title">{{ project.title }}</h1>
+  </div>
+</section>
+<section class="pd-body">
+  <div class="container">
+    {% if project.image %}<img src="{{ project.image }}" alt="{{ project.title }}" class="pd-legacy-img">{% endif %}
+    <p class="pd-desc">{{ project.description }}</p>
+  </div>
+</section>
+{% endblock %}

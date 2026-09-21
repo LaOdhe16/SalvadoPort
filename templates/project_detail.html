@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}{{ project.title }} | {{ profile.name }}{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+
+<section class="pd-hero">
+  <div class="container">
+    <a href="/#work" class="back-btn"><i class="fa-solid fa-arrow-left-long"></i> Back to portfolio</a>
+    <div class="pd-meta">
+      <span class="pd-cat">{{ project.category }}</span>
+      <span class="pd-year">{{ project.year }}</span>
+    </div>
+    <h1 class="pd-title">{{ project.title }}</h1>
+    {% if project.subtitle %}<p class="pd-subtitle">{{ project.subtitle }}</p>{% endif %}
+    <div class="pd-actions">
+      <a href="{{ project.link }}" target="_blank" rel="noopener" class="btn btn-teal"><i class="{{ project.link_meta.icon }}"></i> {{ project.link_meta.label }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="pd-body">
+  <div class="container">
+    <div class="pd-banner tone-{{ project.tone }}">
+      <i class="fa-solid {{ project.icon }}"></i>
+      <span class="pd-tag">{{ project.tag }}</span>
+    </div>
+
+    <div class="pd-grid">
+      <div class="pd-main">
+        <h2 class="pd-sec-h">Overview</h2>
+        <p class="pd-desc">{{ project.description }}</p>
+
+        {% if project.features %}
+        <h2 class="pd-sec-h">Key features</h2>
+        <ul class="pd-feats">
+          {% for f in project.features %}
+          <li><i class="fa-solid fa-check"></i> {{ f }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+
+      <aside class="pd-aside">
+        {% if project.stack %}
+        <div class="pd-aside-block">
+          <span class="pd-lbl">Tech stack</span>
+          <div class="tag-wrap">
+            {% for t in project.stack %}<span class="s-tag">{{ t }}</span>{% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="pd-aside-block">
+          <span class="pd-lbl">Project info</span>
+          <div class="pd-info-row"><span>Category</span><span>{{ project.category }}</span></div>
+          <div class="pd-info-row"><span>Year</span><span>{{ project.year }}</span></div>
+          <div class="pd-info-row">
+            <span>Source</span>
+            <a href="{{ project.link }}" target="_blank" rel="noopener" class="pd-gh-link">{{ project.link_meta.short }} <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <a href="{{ project.link }}" target="_blank" rel="noopener" class="btn btn-light btn-block"><i class="{{ project.link_meta.icon }}"></i> {{ project.link_meta.cta }}</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{% if next_project %}
+<div class="next-strip">
+  <div class="container">
+    <span class="next-label">Next project</span>
+    <a href="/project/{{ next_project.id }}" class="next-link">
+      <span>{{ next_project.title }}</span>
+      <i class="fa-solid fa-arrow-right-long"></i>
+    </a>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

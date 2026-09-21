@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}404 | {{ profile.name }}{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+<div class="page-404">
+  <p class="e-label">Page not found</p>
+  <h1 class="e-big">404</h1>
+  <p class="e-text">The page you’re looking for doesn’t exist or has been moved.</p>
+  <a href="/" class="btn btn-teal">Go home <i class="fa-solid fa-house"></i></a>
+</div>
+{% endblock %}

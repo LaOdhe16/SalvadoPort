@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% set first_name = profile.name.split()[0] %}
+
+<!-- ═════════ HERO ═════════ -->
+<section class="hero" id="about">
+  <!-- Photo (left, full height, fades into the dark background) -->
+  <div class="hero-photo">
+    <img src="{{ url_for('static', filename='img/profile-nobg.png') }}" alt="{{ profile.name }}" class="hero-img">
+  </div>
+
+  <div class="hero-role-tag">
+    <span class="role-dot"></span>
+    <p>{{ profile.role }}</p>
+  </div>
+
+  <p class="hero-tagline"><span class="tag-line"></span>Let’s take your<br>security to next level</p>
+
+  <div class="hero-right">
+    <div class="hero-intro">
+      <p class="hero-hello reveal">Hello there, Nice to meet you. I am</p>
+      <h1 class="hero-name reveal">{{ first_name }}</h1>
+      <p class="hero-bio reveal">{{ profile.about }}</p>
+    </div>
+
+    <div class="latest reveal">
+      <div class="latest-head">
+        <h2>Latest projects</h2>
+        <a href="#work" class="view-all">View all</a>
+      </div>
+      <div class="carousel" id="heroCarousel">
+        {% for project in projects %}
+        <a href="/project/{{ project.id }}" class="shot tone-{{ project.tone }}">
+          <i class="fa-solid {{ project.icon }} shot-icon"></i>
+          <span class="shot-meta">
+            <span class="shot-title">{{ project.title }}</span>
+            <span class="shot-cat">{{ project.category }} · {{ project.year }}</span>
+          </span>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="arrows">
+        <button class="arr" id="arrPrev" aria-label="Previous"><i class="fa-solid fa-arrow-left-long"></i></button>
+        <button class="arr" id="arrNext" aria-label="Next"><i class="fa-solid fa-arrow-right-long"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ SKILLS & SERVICES ═════════ -->
+<section class="section" id="expertise">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Skills &amp; Services</span>
+      <h2 class="sec-title">What I <span class="accent">do</span></h2>
+      <p class="sec-sub">Building secure, scalable systems — from web applications to network security and digital forensics.</p>
+    </div>
+
+    <div class="svc-grid">
+      {% for svc in services %}
+      <article class="svc-card reveal">
+        <div class="svc-icon"><i class="fa-solid {{ svc.icon }}"></i></div>
+        <span class="svc-num">0{{ loop.index }}</span>
+        <h3 class="svc-title">{{ svc.title }}</h3>
+        <p class="svc-desc">{{ svc.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Tech stack: floating bubbles that react to the cursor -->
+    <div class="stack-box reveal">
+      <div class="stack-head">
+        <h3>Tech Stack</h3>
+        <span><b>{{ skills|length }}</b> technologies</span>
+      </div>
+      <div class="bubbles" id="bubbles">
+        {% for skill in skills %}
+        <span class="bubble{% if loop.index <= 4 %} core{% endif %}" style="--i: {{ loop.index0 }}">
+          <span class="bubble-in">
+            <i class="{{ skill.icon }}"></i>
+            <span class="bubble-name">{{ skill.name }}</span>
+          </span>
+        </span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ JOURNEY ═════════ -->
+<section class="section section-alt" id="background">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Background</span>
+      <h2 class="sec-title">My <span class="accent">journey</span></h2>
+    </div>
+    <div class="journey-grid">
+      <div class="jrn-col">
+        <h3 class="jrn-col-title reveal"><i class="fa-solid fa-briefcase"></i> Experience</h3>
+        {% for exp in experience %}
+        <div class="jrn-item reveal">
+          <div class="jrn-connector"><span class="jrn-dot"></span><span class="jrn-vline"></span></div>
+          <div class="jrn-card">
+            {% if exp.year %}<span class="jrn-year">{{ exp.year }}</span>{% endif %}
+            <h4 class="jrn-role">{{ exp.role }}</h4>
+            {% if exp.company %}<p class="jrn-company">{{ exp.company }}</p>{% endif %}
+            {% if exp.link is defined %}
+              {% if exp.link %}
+              <a href="{{ exp.link }}" target="_blank" rel="noopener" class="jrn-link"><i class="fa-solid fa-link"></i> View certificate</a>
+              {% else %}
+              <a href="#" class="jrn-link is-soon" title="Link coming soon"><i class="fa-solid fa-link"></i> View certificate</a>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="jrn-col">
+        <h3 class="jrn-col-title reveal"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+        {% for edu in education %}
+        <div class="jrn-item reveal">
+          <div class="jrn-connector"><span class="jrn-dot"></span><span class="jrn-vline"></span></div>
+          <div class="jrn-card">
+            <span class="jrn-year">{{ edu.year }}</span>
+            {% if edu.degree %}<h4 class="jrn-role">{{ edu.degree }}</h4>{% endif %}
+            <p class="jrn-company">{{ edu.school }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ PORTFOLIO ═════════ -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="works-head reveal">
+      <div class="sec-head">
+        <span class="sec-tag">Portfolio</span>
+        <h2 class="sec-title">Selected <span class="accent">works</span></h2>
+      </div>
+      <div class="filter-group">
+        <button class="f-btn active" data-f="all">All</button>
+        <button class="f-btn" data-f="Web">Web</button>
+        <button class="f-btn" data-f="Cybersecurity">Cybersecurity</button>
+        <button class="f-btn" data-f="Game">Game</button>
+        <button class="f-btn" data-f="impactful">Impactful Projects</button>
+      </div>
+    </div>
+
+    <div class="works-grid">
+      {% for project in projects %}
+      <a href="/project/{{ project.id }}" class="work-card reveal" data-cat="{{ project.category }}" data-impact="{{ 1 if project.impactful else 0 }}">
+        <div class="work-thumb tone-{{ project.tone }}">
+          <i class="fa-solid {{ project.icon }}"></i>
+          <span class="work-year">{{ project.year }}</span>
+        </div>
+        <div class="work-body">
+          <span class="work-cat">{{ project.category }}</span>
+          <h3 class="work-title">{{ project.title }}</h3>
+          <p class="work-desc">{{ project.description|truncate(100, False, '…') }}</p>
+          <div class="work-foot">
+            <div class="work-stack">
+              {% if project.stack %}{% for t in project.stack[:3] %}<span>{{ t }}</span>{% endfor %}{% endif %}
+            </div>
+            <span class="work-go"><i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="works-empty" id="worksEmpty" hidden>No projects in this category yet — check back soon.</p>
+  </div>
+</section>
+
+<!-- ═════════ CERTIFICATES ═════════ -->
+<section class="section section-alt" id="certificates">
+  <div class="container">
+    <div class="sec-head with-action reveal">
+      <div>
+        <span class="sec-tag">Achievements</span>
+        <h2 class="sec-title">My <span class="accent">certificates</span></h2>
+      </div>
+      <a href="{{ profile.certificates_link }}" target="_blank" rel="noopener" class="btn btn-line">View all <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+    <div class="certs-grid">
+      {% for cert in certificates %}
+      <div class="cert-card reveal" data-title="{{ cert.title }}">
+        <div class="cert-img">
+          <img src="{{ cert.image }}" alt="{{ cert.title }}" loading="lazy">
+          <div class="cert-overlay"><i class="fa-solid fa-expand"></i><span>View</span></div>
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">{{ cert.issuer }} · {{ cert.year }}</span>
+          <h3 class="cert-name">{{ cert.title }}</h3>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CONTACT ═════════ -->
+<section class="section contact" id="contact">
+  <div class="contact-glow" aria-hidden="true"></div>
+
+  <div class="container contact-grid">
+    <div class="contact-left">
+      <span class="sec-tag reveal">Contact me</span>
+      <h2 class="contact-title reveal">Got an idea?<br>Let’s make it <span class="accent">secure</span>.</h2>
+      <p class="contact-sub reveal">Open to internships, freelance projects and collaborations. Drop me a line and I’ll usually reply within a day.</p>
+
+      <button class="mail-big reveal" id="copyEmailBtn" data-email="{{ profile.email }}" aria-label="Copy email address">
+        <span class="mail-text">{{ profile.email }}</span>
+        <span class="mail-copy"><i class="fa-regular fa-copy"></i> Copy</span>
+      </button>
+
+      <div class="contact-actions reveal">
+        <a href="mailto:{{ profile.email }}" class="btn btn-light"><i class="fa-solid fa-paper-plane"></i> Send an email</a>
+        <span class="status-pill"><span class="tc-dot"></span>Available · <span id="localTime">00:00:00</span> WIB</span>
+      </div>
+    </div>
+
+    <div class="social-grid reveal">
+      <a href="{{ profile.github }}" target="_blank" rel="noopener" class="social-tile">
+        <i class="fa-brands fa-github social-bg"></i>
+        <span class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        <span class="social-name">GitHub</span>
+        <span class="social-handle">@{{ profile.github.rstrip('/').split('/')[-1] }}</span>
+      </a>
+      <a href="{{ profile.linkedin }}" target="_blank" rel="noopener" class="social-tile">
+        <i class="fa-brands fa-linkedin-in social-bg"></i>
+        <span class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        <span class="social-name">LinkedIn</span>
+        <span class="social-handle">Let’s connect</span>
+      </a>
+      {% if profile.medium %}
+      <a href="{{ profile.medium }}" target="_blank" rel="noopener" class="social-tile">
+        <i class="fa-brands fa-medium social-bg"></i>
+        <span class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        <span class="social-name">Medium</span>
+        <span class="social-handle">@{{ profile.medium.rstrip('/').split('/')[-1].lstrip('@') }}</span>
+      </a>
+      {% endif %}
+      {% if profile.instagram %}
+      <a href="{{ profile.instagram }}" target="_blank" rel="noopener" class="social-tile">
+        <i class="fa-brands fa-instagram social-bg"></i>
+        <span class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        <span class="social-name">Instagram</span>
+        <span class="social-handle">@{{ profile.instagram.rstrip('/').split('/')[-1] }}</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- scrolling ribbon -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track">
+      {% for _ in range(2) %}
+      <span>Open for internships</span><i class="fa-solid fa-shield-halved"></i>
+      <span>Freelance</span><i class="fa-solid fa-shield-halved"></i>
+      <span>Collaborations</span><i class="fa-solid fa-shield-halved"></i>
+      <span>Let’s talk</span><i class="fa-solid fa-shield-halved"></i>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
