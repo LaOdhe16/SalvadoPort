@@ -1,11 +1,7 @@
-/* ═══════════════════════════════════════════════════════════
-   PORTFOLIO — interactions
-   ═══════════════════════════════════════════════════════════ */
-
 const $  = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
-/* ── SCROLL PROGRESS + HEADER + BACK TO TOP ─────────────── */
+/* SCROLL PROGRESS, HEADER, BACK TO TOP */
 const $bar = $('#scrollBar');
 const $hdr = $('#siteHeader');
 const $top = $('#topBtn');
@@ -20,7 +16,7 @@ window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 $top?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-/* ── MOBILE DRAWER ──────────────────────────────────────── */
+/* MOBILE DRAWER */
 const $ham = $('#ham'), $drw = $('#drawer'), $drwX = $('#drawerX'), $drwBg = $('#drawerBg');
 const openD  = () => { $drw?.classList.add('open');    $drwBg?.classList.add('on');    $ham?.classList.add('open');    document.body.style.overflow = 'hidden'; };
 const closeD = () => { $drw?.classList.remove('open'); $drwBg?.classList.remove('on'); $ham?.classList.remove('open'); document.body.style.overflow = ''; };
@@ -29,12 +25,12 @@ $drwX?.addEventListener('click', closeD);
 $drwBg?.addEventListener('click', closeD);
 $$('#drawer a').forEach(a => a.addEventListener('click', closeD));
 
-/* ── SMOOTH ANCHOR SCROLL (works from any page: "/#work") ─ */
+/* SMOOTH ANCHOR SCROLL */
 $$('a[href^="/#"], a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id  = a.getAttribute('href').split('#')[1];
     const sec = id && document.getElementById(id);
-    if (!sec) return;                       // not on this page → normal navigation
+    if (!sec) return;                    
     e.preventDefault();
     closeD();
     sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -42,7 +38,7 @@ $$('a[href^="/#"], a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── SCROLL REVEAL ──────────────────────────────────────── */
+/* SCROLL REVEAL */
 const revObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
@@ -51,13 +47,12 @@ const revObs = new IntersectionObserver(entries => {
     el.style.transitionDelay = Math.min(sibs.indexOf(el) * 90, 360) + 'ms';
     el.classList.add('in');
     revObs.unobserve(el);
-    // remove the delay once revealed so hover transitions stay snappy
     setTimeout(() => { el.style.transitionDelay = ''; }, 1200);
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 $$('.reveal').forEach(el => revObs.observe(el));
 
-/* ── HERO CAROUSEL (latest projects) ────────────────────── */
+/* HERO CAROUSEL */
 const $car = $('#heroCarousel'), $prev = $('#arrPrev'), $next = $('#arrNext');
 if ($car && $prev && $next) {
   const step = () => {
@@ -76,7 +71,7 @@ if ($car && $prev && $next) {
   sync();
 }
 
-/* ── PORTFOLIO FILTER ───────────────────────────────────── */
+/* PORTFOLIO FILTER */
 const $empty = $('#worksEmpty');
 const matches = (card, f) =>
   f === 'all' ||
@@ -105,7 +100,7 @@ $$('.f-btn').forEach(btn => {
   });
 });
 
-/* ── TOAST + COPY EMAIL ─────────────────────────────────── */
+/* TOAST, COPY EMAIL */
 function showToast(msg, icon = 'fa-check') {
   const $t = $('#globalToast');
   if (!$t) return;
@@ -121,7 +116,7 @@ $('#copyEmailBtn')?.addEventListener('click', function () {
     .catch(() => showToast('Could not copy — please copy manually', 'fa-triangle-exclamation'));
 });
 
-/* ── CERTIFICATE LIGHTBOX ───────────────────────────────── */
+/* CERTIFICATE LIGHTBOX */
 const $lb = $('#lightbox'), $lbI = $('#lbImg'), $lbC = $('#lbCap'), $lbX = $('#lbX');
 $$('.cert-card').forEach(c => {
   c.addEventListener('click', () => {
@@ -141,7 +136,7 @@ $lbX?.addEventListener('click', closeLB);
 $lb?.addEventListener('click', e => { if (e.target === $lb) closeLB(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeD(); closeLB(); } });
 
-/* ── CLOCK (WIB) ────────────────────────────────────────── */
+/* CLOCK (WIB) */
 const $clk = $('#localTime');
 if ($clk) {
   const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
@@ -149,7 +144,7 @@ if ($clk) {
   tick(); setInterval(tick, 1000);
 }
 
-/* ── ACTIVE NAV LINK (scroll-spy) ───────────────────────── */
+/* ACTIVE NAV LINK */
 const navLinks = $$('.nav-center a');
 const sections = $$('section[id]');
 if (navLinks.length && sections.length) {
@@ -162,12 +157,12 @@ if (navLinks.length && sections.length) {
   sections.forEach(s => spy.observe(s));
 }
 
-/* ── EXPERIENCE LINKS WITHOUT A URL YET ─────────────────── */
+/*  EXPERIENCE LINKS */
 $$('.jrn-link.is-soon').forEach(a => {
   a.addEventListener('click', e => { e.preventDefault(); showToast('Certificate link coming soon', 'fa-clock'); });
 });
 
-/* ── TECH-STACK BUBBLES: drift away from the cursor ─────── */
+/* TECH-STACK BUBBLES*/
 const $bubbles = $('#bubbles');
 if ($bubbles && matchMedia('(hover: hover)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const items = $$('.bubble', $bubbles);

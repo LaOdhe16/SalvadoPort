@@ -3,9 +3,9 @@
 
 {% set first_name = profile.name.split()[0] %}
 
-<!-- ═════════ HERO ═════════ -->
+<!-- HERO  -->
 <section class="hero" id="about">
-  <!-- Photo (left, full height, fades into the dark background) -->
+  <!-- Photo -->
   <div class="hero-photo">
     <img src="{{ url_for('static', filename='img/profile-nobg.png') }}" alt="{{ profile.name }}" class="hero-img">
   </div>
@@ -48,13 +48,14 @@
   </div>
 </section>
 
-<!-- ═════════ SKILLS & SERVICES ═════════ -->
+<!-- SKILLS & SERVICES -->
 <section class="section" id="expertise">
   <div class="container">
     <div class="sec-head reveal">
       <span class="sec-tag">Skills &amp; Services</span>
       <h2 class="sec-title">What I <span class="accent">do</span></h2>
-      <p class="sec-sub">Building secure, scalable systems — from web applications to network security and digital forensics.</p>
+      <p class="sec-sub">Architecting secure, scalable systems across web applications, network defense, and digital forensics. 
+        In a world of evolving threats, building unshakeable security is how we empower the future.</p>
     </div>
 
     <div class="svc-grid">
@@ -68,7 +69,7 @@
       {% endfor %}
     </div>
 
-    <!-- Tech stack: floating bubbles that react to the cursor -->
+    <!-- Tech stack -->
     <div class="stack-box reveal">
       <div class="stack-head">
         <h3>Tech Stack</h3>
@@ -88,7 +89,7 @@
   </div>
 </section>
 
-<!-- ═════════ JOURNEY ═════════ -->
+<!-- JOURNEY -->
 <section class="section section-alt" id="background">
   <div class="container">
     <div class="sec-head reveal">
@@ -133,7 +134,7 @@
   </div>
 </section>
 
-<!-- ═════════ PORTFOLIO ═════════ -->
+<!-- PORTFOLIO  -->
 <section class="section" id="work">
   <div class="container">
     <div class="works-head reveal">
@@ -171,11 +172,11 @@
       </a>
       {% endfor %}
     </div>
-    <p class="works-empty" id="worksEmpty" hidden>No projects in this category yet — check back soon.</p>
+    <p class="works-empty" id="worksEmpty" hidden>Currently in the works. Check back soon for updates!</p>
   </div>
 </section>
 
-<!-- ═════════ CERTIFICATES ═════════ -->
+<!-- CERTIFICATES -->
 <section class="section section-alt" id="certificates">
   <div class="container">
     <div class="sec-head with-action reveal">
@@ -202,7 +203,7 @@
   </div>
 </section>
 
-<!-- ═════════ CONTACT ═════════ -->
+<!-- CONTACT -->
 <section class="section contact" id="contact">
   <div class="contact-glow" aria-hidden="true"></div>
 
@@ -210,7 +211,8 @@
     <div class="contact-left">
       <span class="sec-tag reveal">Contact me</span>
       <h2 class="contact-title reveal">Got an idea?<br>Let’s make it <span class="accent">secure</span>.</h2>
-      <p class="contact-sub reveal">Open to internships, freelance projects and collaborations. Drop me a line and I’ll usually reply within a day.</p>
+      <p class="contact-sub reveal">Open for high-impact professional roles, strategic collaborations, 
+        and specialized consulting. Drop me a line, I typically respond within 24 hours.</p>
 
       <button class="mail-big reveal" id="copyEmailBtn" data-email="{{ profile.email }}" aria-label="Copy email address">
         <span class="mail-text">{{ profile.email }}</span>

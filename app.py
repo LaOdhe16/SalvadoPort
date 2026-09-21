@@ -5,8 +5,6 @@ import json
 
 app = Flask(__name__)
 
-# Category → default icon + label used on the detail page.
-# A project can override the icon with its own "icon" field in data.json.
 CATEGORY_META = {
     "Web": {"icon": "fa-layer-group", "tag": "WEB_APP"},
     "Cybersecurity": {"icon": "fa-shield-halved", "tag": "SECURITY"},
@@ -14,10 +12,8 @@ CATEGORY_META = {
 }
 DEFAULT_META = {"icon": "fa-folder-open", "tag": "PROJECT"}
 
-# Thumbnail gradients are cycled by project id (see style.css: .tone-1 … .tone-6)
 TONE_COUNT = 6
 
-# Where a project's "link" points to decides the button label / icon.
 LINK_META = {
     "github.com": {"short": "GitHub", "icon": "fa-brands fa-github",
                    "label": "View on GitHub", "cta": "View source code"},
@@ -29,7 +25,7 @@ LINK_META = {
 DEFAULT_LINK_META = {"short": "Link", "icon": "fa-solid fa-arrow-up-right-from-square",
                      "label": "Open project", "cta": "Open project"}
 
-# Tech-stack bubbles: skill name → Font Awesome icon classes.
+# Tech-stack bubbles
 SKILL_ICONS = {
     "Python": "fa-brands fa-python",
     "Flask": "fa-solid fa-flask",
@@ -97,8 +93,6 @@ def inject_data():
 @app.route('/')
 def home():
     data = load_data()
-
-    # Newest year first; projects with the same year keep their order in data.json.
     projects = sorted(
         (enrich(p) for p in data.get('projects', [])),
         key=lambda p: p.get('year', ''),
@@ -107,9 +101,6 @@ def home():
 
     skills = [{"name": s, "icon": SKILL_ICONS.get(s, DEFAULT_SKILL_ICON)}
               for s in data.get('skills', [])]
-
-    # Only certificates flagged "featured": true are shown on the page;
-    # the rest live in the Google Drive folder behind the "View all" button.
     certificates = [c for c in data.get('certificates', []) if c.get('featured')]
 
     return render_template(
@@ -131,7 +122,6 @@ def project_detail(id):
     if not project:
         abort(404)
 
-    # "What's next" navigation follows the order in data.json.
     ids = [p['id'] for p in raw]
     idx = ids.index(id)
     next_project = raw[(idx + 1) % len(raw)] if len(raw) > 1 else None
