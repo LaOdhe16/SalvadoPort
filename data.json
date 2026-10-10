@@ -100,6 +100,26 @@
     },
     {
       "id": 2,
+      "title": "HomeService",
+      "category": "Web",
+      "year": "2025",
+      "description": "HomeService is a web-based platform built with Python and Flask to manage household service bookings, hosted on Microsoft Azure with a MySQL database.",
+      "stack": [
+        "Python",
+        "Flask",
+        "MySQL",
+        "Microsoft Azure"
+      ],
+      "features": [
+        "End-to-end household service booking workflow",
+        "MySQL-backed data layer for bookings and users",
+        "Deployed and hosted on Microsoft Azure"
+      ],
+      "link": "https://github.com/LaOdhe16/HomeService",
+      "impactful": false
+    },
+    {
+      "id": 3,
       "title": "Flappy Bird Game (Python)",
       "category": "Game",
       "year": "2024",
@@ -117,7 +137,7 @@
       "impactful": false
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "AndroGoat Security Exploitation and Analysis",
       "subtitle": "An Investigation into 5 Critical Vulnerabilities in an Android Application",
       "category": "Cybersecurity",
@@ -140,7 +160,7 @@
       "impactful": false
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Android APK Malware Analysis & Reverse Engineering",
       "subtitle": "",
       "category": "Cybersecurity",
@@ -161,7 +181,7 @@
       "impactful": false
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Web Application Penetration Testing",
       "subtitle": "Vulnerable Lab Assessment",
       "category": "Cybersecurity",
@@ -182,7 +202,7 @@
       "impactful": false
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "Python-Automated Honeypot & Intrusion Detection System (IDS)",
       "subtitle": "",
       "category": "Cybersecurity",
@@ -205,7 +225,7 @@
       "impactful": false
     },
     {
-      "id": 7,
+      "id": 8,
       "title": "WebShield-Analyzer",
       "subtitle": "Web Traffic & Security Log Parser",
       "category": "Cybersecurity",
