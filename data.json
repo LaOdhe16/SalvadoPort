@@ -100,83 +100,6 @@
     },
     {
       "id": 2,
-      "title": "HomeService",
-      "category": "Web",
-      "year": "2025",
-      "description": "HomeService is a web-based platform built with Python and Flask to manage household service bookings, hosted on Microsoft Azure with a MySQL database.",
-      "stack": [
-        "Python",
-        "Flask",
-        "MySQL",
-        "Microsoft Azure"
-      ],
-      "features": [
-        "End-to-end household service booking workflow",
-        "MySQL-backed data layer for bookings and users",
-        "Deployed and hosted on Microsoft Azure"
-      ],
-      "link": "https://github.com/LaOdhe16/HomeService",
-      "impactful": false
-    },
-    {
-      "id": 3,
-      "title": "Library Book Borrowing System",
-      "category": "Web",
-      "year": "2024",
-      "description": "A web-based library management and book borrowing application built with Flask and MySQL, featuring user authentication, book search, borrowing/returning functions, and admin book management.",
-      "stack": [
-        "Python",
-        "Flask",
-        "MySQL"
-      ],
-      "features": [
-        "User authentication and role-based access",
-        "Book catalog search and browsing",
-        "Borrow / return workflow with admin inventory tools"
-      ],
-      "link": "https://github.com/LaOdhe16/Library_Management",
-      "impactful": false
-    },
-    {
-      "id": 4,
-      "title": "Vehicle Rental System",
-      "category": "Web",
-      "year": "2024",
-      "description": "Building a vehicle reservation platform that allows users to view unit availability and conduct rental transactions systematically.",
-      "stack": [
-        "Python",
-        "Flask",
-        "MySQL"
-      ],
-      "features": [
-        "Real-time vehicle unit availability tracking",
-        "Structured rental transaction workflow",
-        "Centralized record-keeping for reservations"
-      ],
-      "link": "https://github.com/LaOdhe16/Sistem_Penyewaan_Kendaraan",
-      "impactful": false
-    },
-    {
-      "id": 5,
-      "title": "Ticket Booking System",
-      "category": "Web",
-      "year": "2024",
-      "description": "Design a web-based ticket booking system with schedule management features and a structured checkout process.",
-      "stack": [
-        "Python",
-        "Flask",
-        "MySQL"
-      ],
-      "features": [
-        "Schedule and availability management",
-        "Guided seat / ticket selection flow",
-        "Structured, multi-step checkout process"
-      ],
-      "link": "https://github.com/LaOdhe16/Sistem_Pemesanan_Tiket",
-      "impactful": false
-    },
-    {
-      "id": 6,
       "title": "Flappy Bird Game (Python)",
       "category": "Game",
       "year": "2024",
@@ -194,7 +117,7 @@
       "impactful": false
     },
     {
-      "id": 7,
+      "id": 3,
       "title": "AndroGoat Security Exploitation and Analysis",
       "subtitle": "An Investigation into 5 Critical Vulnerabilities in an Android Application",
       "category": "Cybersecurity",
@@ -217,7 +140,7 @@
       "impactful": false
     },
     {
-      "id": 8,
+      "id": 4,
       "title": "Android APK Malware Analysis & Reverse Engineering",
       "subtitle": "",
       "category": "Cybersecurity",
@@ -238,7 +161,7 @@
       "impactful": false
     },
     {
-      "id": 9,
+      "id": 5,
       "title": "Web Application Penetration Testing",
       "subtitle": "Vulnerable Lab Assessment",
       "category": "Cybersecurity",
@@ -259,7 +182,7 @@
       "impactful": false
     },
     {
-      "id": 10,
+      "id": 6,
       "title": "Python-Automated Honeypot & Intrusion Detection System (IDS)",
       "subtitle": "",
       "category": "Cybersecurity",
@@ -282,7 +205,7 @@
       "impactful": false
     },
     {
-      "id": 11,
+      "id": 7,
       "title": "WebShield-Analyzer",
       "subtitle": "Web Traffic & Security Log Parser",
       "category": "Cybersecurity",
